@@ -1,0 +1,56 @@
+.app {
+
+    .container {
+        /* Login & Register*/
+        .auth {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #bdfff0d0;
+            height: 100vh;
+
+            h1 {
+                margin-bottom: 20px;
+                font-size: 40px;
+                color: teal;
+            } 
+
+            form {
+                display: flex;
+                flex-direction: column;
+                padding: 60px;
+                background-color: #fff;
+                width: 230px;
+                gap: 20px;
+
+                input {
+                    font-size: 15px;
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 1px solid gray;
+                }
+
+                button {
+                    font-size: 15px;
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 5px gray;
+                    background-color: teal;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                p {
+                    font-size: 15px;
+                    text-align: center;
+                    color: red;
+                }
+                span {
+                    font-size: 15px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
