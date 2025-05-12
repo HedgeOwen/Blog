@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
   Route, 
   Outlet,
@@ -21,31 +21,31 @@ const Layout = () => {
   </>);
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home/>,
       },
       {
-        path: "/post/:id",
+        path: "post/:id",
         element: <Single/>,
       },
       {
-        path: "/write",
+        path: "write",
         element: <Write/>,
       },
     ]
   },
   {
-    path: "/register",
+    path: "register",
     element: <Register/>,
   },
   {
-    path: "/login",
+    path: "login",
     element: <Login/>,
   },
   {
