@@ -226,9 +226,13 @@ $mainColor: #9aebd8c2;
             }
         }
 
+        //SINGLE
+
         .single {
             display: flex;
             gap: 50px;
+            width:1200px;
+            margin: 0 auto;
 
             .content {
                 flex: 5;  
@@ -319,5 +323,94 @@ $mainColor: #9aebd8c2;
             }
         }
 
+        //WRITE
+
+        .add {
+            display: flex;
+            gap: 50px;
+            width:1200px;
+            margin: 20px auto;
+
+            .content {
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                input {
+                    padding: 10px;
+                    bottom: 1px solid lightgrey;
+                }
+
+                .editorContainer {
+                    height: 300px;
+                    overflow: scroll;
+                    border: 1px solid lightgrey;
+
+                    .editor {
+                        height: 100%;
+                        border: none;
+                    }
+                }
+            }
+
+            .menu {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .item {
+                    border: 1px solid lightgrey;
+                    padding: 10px;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    font-size: 12px;
+                    color: #555;
+
+                    h1 {
+                        font-size: 20px;
+                    }
+
+                    .file {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+
+                    .buttons {
+                        display: flex;
+                        justify-content: space-between;
+
+                        :first-child {
+                            cursor: pointer;
+                            color: teal;
+                            background-color: white;
+                            border: 1px solid teal;
+                            padding: 3px 5px;
+                        }
+
+                        :last-child {
+                            cursor: pointer;
+                            color: white;
+                            background-color: teal;
+                            border: 1px solid teal;
+                            padding: 3px 5px;
+                        }
+
+                        .cat {
+                            display: flex;
+                            align-items: center;
+                            gap: 2px;
+
+                            label {
+                                color: teal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
