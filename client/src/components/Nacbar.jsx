@@ -11,22 +11,19 @@ const Navbar = () => {
                 </div>
                 <div className='links'>
                     <Link className='link' to="/?cat=blog">
-                        <h4>Blog</h4>
+                        <h4>BLOG</h4>
+                    </Link>
+                    <Link className='link' to="/?cat=note">
+                        <h4>NOTE</h4>
+                    </Link>
+                    <Link className='link' to="/?cat=travel">
+                        <h4>TRAVEL</h4>
+                    </Link>
+                    <Link className='link' to="/?cat=life">
+                        <h4>LIFE</h4>
                     </Link>
                     <Link className='link' to="/?cat=about">
-                        <h4>about</h4>
-                    </Link>
-                    <Link className='link' to="/?cat=about">
-                        <h4>about</h4>
-                    </Link>
-                    <Link className='link' to="/?cat=about">
-                        <h4>about</h4>
-                    </Link>
-                    <Link className='link' to="/?cat=about">
-                        <h4>about</h4>
-                    </Link>
-                    <Link className='link' to="/?cat=about">
-                        <h4>about</h4>
+                        <h4>ABOUT</h4>
                     </Link>
                     <span>Owen</span>
                     <span>Logout</span>

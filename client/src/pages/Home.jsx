@@ -7,7 +7,7 @@ const Home = () => {
         {
             id: 1,
             title: "Test",
-            desc: "test",
+            desc: "My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content<br/><br/>My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content",
             img: Logo,
         },
         {
@@ -34,11 +34,11 @@ const Home = () => {
                             <img src={post.img}></img>
                         </div>
                         <div className='content'>
-                            <Link to={`/post/${post.id}`} className='link'>
-                                <h1>{post.title}</h1>
-                            </Link>
+                            <h1>{post.title}</h1>
                             <p>{post.desc}</p>
-                            <button>Read More</button>
+                            <Link to={`/post/${post.id}`} className='link'>
+                                <button>Read More</button>
+                            </Link>
                         </div> 
                     </div>
                 ))}

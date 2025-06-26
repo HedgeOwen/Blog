@@ -66,8 +66,8 @@ $mainColor: #9aebd8c2;
             justify-content: center;
             .container {
                 background-color: $mainColor;
-                width:1200px;
-                padding: 10px 40px;
+                width:100%;
+                padding: 12px 30px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -83,26 +83,29 @@ $mainColor: #9aebd8c2;
                 .links {
                     display: flex;
                     align-items: center;
-                    gap: 15px; 
+                    gap: 20px; 
 
                     h4 {
-                        font-size: 16px;
-                        font-weight: 300;
+                        font-size: 22px;
+                        font-weight: 500;
+                        color: #797979;
                     }
 
                     span {
                         cursor: pointer;
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: teal;
                     }
 
                     .write {
-                        background-color: $mainColor;
-                        width: 60px;
-                        height: 30px;
-                        border-radius: 10%;
+                        width: 65px;
+                        height: 35px;
+                        border-radius: 1cap;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        font-size: 16px;
+                        font-size: 18px;
                         font-weight: 400;
                         background-color: teal;
                         border: 1px solid $mainColor;
@@ -126,15 +129,16 @@ $mainColor: #9aebd8c2;
 
         //Footer
         footer {
-            margin-top: 20px;
-            padding: 10px 40px;
+
             background-color: $mainColor;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width:1200px;
-            margin: 0 auto;
-            font-style: 12px;
+            margin-top: 20px;
+            width:96%;
+            padding: 12px 30px;
+
+            
 
             img {
                 display: block;
@@ -146,12 +150,13 @@ $mainColor: #9aebd8c2;
         //Home
 
         .home {
-            width:1200px;
-            margin: 0 auto;
+            margin: 20px 60px;
+            width: full;
             h {
-                font-family: cursive;
+                font-family:'Courier New', Courier, monospace;
                 font-size: 100px;
-                color: teal;
+                font-weight: 600;
+                color: $mainColor;
             }
 
             .posts {
@@ -159,13 +164,16 @@ $mainColor: #9aebd8c2;
                 margin-bottom: 50px;
                 display: flex;
                 flex-direction: column;
-                gap:100px;
-                padding: 10px 0px;
+                gap: 40px;
                 
 
                 .post {
                     display: flex;
                     gap: 50px;
+                    padding: 30px;
+                    border: 3px solid $mainColor;
+                    border-radius: 2cap;
+
                     &:nth-child(2n+1){
                         flex-direction: row-reverse;
                     }
@@ -178,6 +186,7 @@ $mainColor: #9aebd8c2;
                             width: 100%;
                             max-height: 300px;
                             object-fit: cover;
+                            border-left: 10px;
                         }
 
                         &::after{
@@ -186,8 +195,8 @@ $mainColor: #9aebd8c2;
                             height: 100%;
                             background-color: $mainColor;
                             position: absolute;
-                            top: 10px;
-                            left: -20px;
+                            top: 5px;
+                            left: -10px;
                             z-index: -1;
                         }
                     }
@@ -197,14 +206,13 @@ $mainColor: #9aebd8c2;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
-                        //padding: 0px 100px;
 
                         h1 {
                             font-size: 40px;
                         }
 
                         p {
-                            font-style: 16px;
+                            font-size: 20px;
                         }
 
                         button {
@@ -212,12 +220,13 @@ $mainColor: #9aebd8c2;
                             padding: 8px 16px;
                             cursor: pointer;
                             background-color: white;
-                            border: 1px solid $mainColor;
+                            border: 2px solid $mainColor;
+                            border-radius: 1cap;
                             font-size: 16px;
                             font-weight: 3px;
 
                             &:hover {
-                                border: 1px solid white;
+                                border: 2px solid white;
                                 background-color: $mainColor;
                             }
                         }
