@@ -26,7 +26,7 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <h>Home</h>
+            <h1>Home</h1>
             <div className='posts'>
                 {posts.map((post) => (
                     <div className='post' key={post.id}>

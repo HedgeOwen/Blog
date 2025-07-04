@@ -9,7 +9,7 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Write from "./pages/Write"
 import Single from "./pages/Single"
-import Navbar from "./components/Nacbar"
+import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import "./style.scss"
 
@@ -27,7 +27,7 @@ const router = createHashRouter([
     element: <Layout />,
     children: [
       {
-        path: "",
+        path: "/",
         element: <Home/>,
       },
       {
