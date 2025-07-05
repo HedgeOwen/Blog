@@ -134,10 +134,10 @@ $mainColor: #9aebd8c2;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 20px;
-            width:96%;
-            padding: 12px 30px;
-
+            margin-top: 30px;
+            width:100%;
+            padding: 12px 15px;
+            box-sizing: border-box;
             
 
             img {
@@ -173,32 +173,35 @@ $mainColor: #9aebd8c2;
                     padding: 30px;
                     border: 3px solid $mainColor;
                     border-radius: 2cap;
+                    min-height: 200px;
+                    
 
                     &:nth-child(2n+1){
                         flex-direction: row-reverse;
                     }
 
                     .img {
-                        flex: 1;
+                        flex: 2;
                         position: relative;
 
                         img {
                             width: 100%;
-                            max-height: 300px;
+                            height: 100%;
                             object-fit: cover;
                             border-left: 10px;
+                            border-radius: 2cap;
                         }
 
-                        &::after{
-                            content: "";
-                            width: 100%;
-                            height: 100%;
-                            background-color: $mainColor;
-                            position: absolute;
-                            top: 5px;
-                            left: -10px;
-                            z-index: -1;
-                        }
+                        // &::after{
+                        //     content: "";
+                        //     width: 100%;
+                        //     height: 100%;
+                        //     background-color: $mainColor;
+                        //     position: absolute;
+                        //     top: 5px;
+                        //     left: -10px;
+                        //     z-index: -1;
+                        // }
                     }
 
                     .content {
@@ -240,15 +243,16 @@ $mainColor: #9aebd8c2;
         .single {
             display: flex;
             gap: 50px;
-            width:1200px;
-            margin: 0 auto;
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
 
             .content {
                 flex: 5;  
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-
+                
                 img {
                     width: 100%;
                     height: 300px;
@@ -294,7 +298,7 @@ $mainColor: #9aebd8c2;
                 gap: 25px;
 
                 h1 {
-                    font-size: 25px;
+                    font-size: 22px;
                     color: #555;
                 }
 
