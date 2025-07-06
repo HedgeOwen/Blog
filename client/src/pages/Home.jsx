@@ -41,6 +41,11 @@ const Home = () => {
     //     },
     // ]
 
+    const getText = (html) =>{
+        const doc = new DOMParser().parseFromString(html, "text/html")
+        return doc.body.textContent
+    }
+
     return (
         <div className='home'>
             <h1>Home</h1>
@@ -48,11 +53,11 @@ const Home = () => {
                 {posts.map((post) => (
                     <div className='post' key={post.id}>
                         <div className='img'>
-                            <img src={post.img} alt=""></img>
+                            <img src={`../upload/${post.img}`} alt="post image"></img>
                         </div>
                         <div className='content'>
                             <h1>{post.title}</h1>
-                            <p>{post.desc}</p>
+                            <p>{getText(post.desc)}</p>
                             <Link to={`/post/${post.id}`} className='link'>
                                 <button>Read More</button>
                             </Link>

@@ -341,8 +341,10 @@ $mainColor: #9aebd8c2;
         .add {
             display: flex;
             gap: 50px;
-            width:1200px;
+            width:100%;
             margin: 20px auto;
+            padding: 30px;
+            box-sizing: border-box;
 
             .content {
                 flex: 5;
