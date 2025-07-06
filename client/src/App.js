@@ -56,9 +56,7 @@ const router = createHashRouter([
     element: <Single/>,
   },
   ],
-  {
-    basename: process.env.PUBLIC_URL || "/"
-  });
+);
 
 function App() {
   return (

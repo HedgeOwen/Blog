@@ -45,7 +45,7 @@ const Single = () => {
     return (
         <div className='single'>
             <div className='content'>
-                <img src={`/upload/${post?.img}`} alt=""></img>
+                <img src={`../Blog/upload/${post?.img}`} alt=""></img>
             <div className='user'>
                 {post.userImg && (<img src={post.userImg} alt="  User"/>)}
             <div className='info'>
