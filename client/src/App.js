@@ -24,54 +24,63 @@ const Layout = () => {
   </>);
 }
 
-const router = createHashRouter([
+const routes = [
   {
     path: "/",
     element: <Layout />,
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "post/:id",
-        element: <Single/>,
+        element: <Single />,
       },
       {
         path: "write",
-        element: <Write/>,
+        element: <Write />,
       },
-    ]
+    ],
   },
   {
     path: "register",
-    element: <Register/>,
+    element: <Register />,
   },
   {
     path: "login",
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: "/write",
-    element: <Write/>,
+    element: <Write />,
   },
   {
     path: "/single",
-    element: <Single/>,
+    element: <Single />,
   },
-  ],
-  {
-    future: {
-      v7_startTransition: true,
+];
+
+const router = createHashRouter(routes, {
+  future: {
+    v7_fetcherPersist: true,
+    v7_normalizeFormMethod: true,
+    v7_partialHydration: true,
+    v7_relativeSplatPath: true,
+    v7_skipActionErrorRevalidation: true,
+    v7_startTransition: true,
     },
-  }
-);
+});
 
 function App() {
   return (
     <div className="app">
       <div className="container"> 
-        <RouterProvider router={router} />
+        <RouterProvider router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       </div>
     </div>
   );

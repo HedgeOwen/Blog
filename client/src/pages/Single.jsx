@@ -18,7 +18,7 @@ const Single = () => {
     useEffect(()=>{
         const fetchData = async ()=>{
             try{
-                const res = await axios.get(`/posts/${postId}`)
+                const res = await axios.get(`/api/posts/${postId}`)
                 setPost(res.data)
             } catch(err){
                 console.log(err)
@@ -30,7 +30,7 @@ const Single = () => {
     const navigate = useNavigate();
     const handleDelete = async ()=>{
         try{
-            await axios.delete(`/posts/${postId}`)
+            await axios.delete(`/api/posts/${postId}`)
             navigate("/")
         } catch(err){
             console.log(err)
@@ -45,7 +45,7 @@ const Single = () => {
     return (
         <div className='single'>
             <div className='content'>
-                <img src={`../Blog/upload/${post?.img}`} alt=""></img>
+                {post.img && <img src={`../Blog/upload/${post?.img}`} alt=""></img>}
             <div className='user'>
                 {post.userImg && (<img src={`../Blog/upload/${post?.userImg}`} alt="  User"/>)}
             <div className='info'>

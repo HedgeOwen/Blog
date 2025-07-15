@@ -15,7 +15,8 @@ const storage = multer. diskStorage({
         cb(null, '../client/public/upload')
     },
     filename: function (req, file, cb) {
-    cb(null, Date.now()+file.originalname)
+        const cleanName = file.originalname.replace(/\s+/g, "_"); 
+        cb(null, Date.now() + "_" + cleanName);
     }
 })
 

@@ -1,9 +1,15 @@
 import { db } from "../db.js";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const getPosts = (req, res) => {
      const q = req.query.cat 
-     ? "SELECT * FROM posts WHERe cat=?" 
+     ? "SELECT * FROM posts WHERE cat=?" 
      : "SELECT * FROM posts";
 
      db.query(q, [req.query.cat], (err, data)=>{
@@ -49,22 +55,41 @@ export const addPost = (req, res) => {
 }
 
 export const deletePost = (req, res) => {
-    const token = req.cookies.access_token;
-    if(!token) return res.status(401).json("Not authenticated.")
+  const token = req.cookies.access_token;
+  if (!token) return res.status(401).json("Not authenticated.");
 
-    jwt.verify(token, "jwtkey", (err,userInfo)=>{
-        if(err) return res.status(403).json("Token is not valid");
+  jwt.verify(token, "jwtkey", (err, userInfo) => {
+    if (err) return res.status(403).json("Token is not valid");
 
-        const postId = req.params.id;
-        const q = "DELETE FROM posts WHERE `id` = ? AND `uid` = ?"
+    const postId = req.params.id;
 
-        db.query(q, [postId, userInfo.id], (err, data)=>{
-            if(err) return res.status(403).json("You can only delete your own post.")
+    const getImgQuery = "SELECT img FROM posts WHERE `id` = ? AND `uid` = ?";
+    db.query(getImgQuery, [postId, userInfo.id], (err, result) => {
+        if (err || result.length === 0) {
+            return res.status(403).json("You can only delete your own post.");
+        }
+        const filename = result[0].img;
+        const filePath = path.join(
+            __dirname,
+            "../../client/public/upload",
+            filename
+        );
 
-            return res.json("Post has been deleted!")
-        })
-    })
-}
+        const q = "DELETE FROM posts WHERE `id` = ? AND `uid` = ?";
+        db.query(q, [postId, userInfo.id], (err, data) => {
+            if (err) return res.status(403).json("Failed to delete post.");
+
+            fs.unlink(filePath, (err) => {
+            if (err) {
+                console.log("Image deletion failed:", err.message);
+            }
+            });
+            
+            return res.json("Post has been deleted!");
+        });
+    });
+  });
+};
 
 export const updatePost = (req, res) => {
     const token = req.cookies.access_token;
