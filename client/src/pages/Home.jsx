@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, useLocation} from 'react-router-dom'
-import axios from "../axios"
+import axios from "axios"
 import { useState, useEffect } from "react"
 
 const Home = () => {

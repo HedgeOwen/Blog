@@ -4,20 +4,12 @@ import postRoutes from "./routes/posts.js"
 import userRoutes from "./routes/users.js"
 import cookieParser from "cookie-parser"
 import multer from "multer"
-import cors from "cors"; 
 
 const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-const corsOrigin = process.env.NODE_ENV === "production"
-  ? "http://47.100.103.106:3000"
-  : "http://localhost:3000";
 
-app.use(cors({
-  origin: corsOrigin,
-  credentials: true
-}));
 
 const storage = multer. diskStorage({
     destination: function (req, file, cb) {

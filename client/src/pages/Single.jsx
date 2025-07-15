@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Menu from "../components/Menu"
 import {Link, useLocation, useNavigate} from 'react-router-dom'
-import axios from "../axios"
+import axios from "axios"
 import { useState, useEffect} from "react"
 import moment from "moment"
 import { AuthContext } from '../context/authContext'
