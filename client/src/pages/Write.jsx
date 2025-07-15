@@ -8,7 +8,7 @@ import moment from "moment"
 
 const Write = () => {
     const state = useLocation().state
-    const [value, setValue] = useState(state?.value || "");
+    const [desc, setDesc] = useState(state?.desc || "");
     const [title, setTitle] = useState(state?.title || "");
     const [file, setFile] = useState(null);
     const [cat, setCat] = useState(state?.cat || "");
@@ -29,19 +29,18 @@ const Write = () => {
     const handleClick = async (e)=>{
         e.preventDefault()
         const imgUrl = await upload();
-        console.log(imgUrl)
 
         try{
             state 
             ? await axios.put(`/posts/${state.id}`, {
                 title, 
-                desc: value, 
+                desc: desc, 
                 cat, 
                 img: file ? imgUrl : "",
             })
             : await axios.post(`/posts/`, {
                 title, 
-                desc: value, 
+                desc: desc, 
                 cat, 
                 img: file ? imgUrl : "",
                 date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
@@ -57,7 +56,7 @@ const Write = () => {
             <div className='content'>
                 <input type='text' placeholder='Title' value={title} onChange={e=>setTitle(e.target.value)}/>
                 <div className='editorContainer'>
-                    <ReactQuill className='editor' theme="snow" value={value} onChange={setValue}/>
+                    <ReactQuill className='editor' theme="snow" value={desc} onChange={setDesc}/>
                 </div>
             </div>
             <div className='menu'>

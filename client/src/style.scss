@@ -1,6 +1,17 @@
-$mainColor: #9aebd8c2;
+$mainColor: #55cdb1c2;
 
 .app {
+    .layout {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    flex-direction: column;
+
+    .main {
+        flex: 1;
+    }
+
     .container {
         width: 100%;
         .link {
@@ -63,7 +74,7 @@ $mainColor: #9aebd8c2;
 
         .navbar {
             display: flex;
-            justify-content: center;
+
             .container {
                 background-color: $mainColor;
                 width:100%;
@@ -273,12 +284,29 @@ $mainColor: #9aebd8c2;
 
                     span {
                         font-weight: bold;
+                        font-size: 24px;
                     }
                 }
 
                 .edit {
                     display: flex;
                     gap: 10px;
+
+                    button {
+                        width: max-content;
+                        padding: 2px 4px;
+                        cursor: pointer;
+                        background-color: white;
+                        border: 1px solid $mainColor;
+                        font-size: 14px;
+                        font-weight: 3px;
+                        border-radius: 10%;
+
+                        &:hover {
+                            border: 1px solid white;
+                            background-color: $mainColor;
+                        }
+                    }
                 }
             }
             h1 {
