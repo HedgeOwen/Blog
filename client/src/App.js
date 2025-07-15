@@ -60,6 +60,11 @@ const router = createHashRouter([
     element: <Single/>,
   },
   ],
+  {
+    future: {
+      v7_startTransition: true,
+    },
+  }
 );
 
 function App() {
