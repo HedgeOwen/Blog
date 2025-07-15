@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate} from 'react-router-dom'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import axios from "axios";
+import axios from "../axios";
 import moment from "moment"
 
 const Write = () => {

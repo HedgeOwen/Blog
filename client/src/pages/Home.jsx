@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, useLocation} from 'react-router-dom'
-import axios from "axios"
+import axios from "../axios"
 import { useState, useEffect } from "react"
 
 const Home = () => {
@@ -20,27 +20,6 @@ const Home = () => {
         fetchData();
     }, [cat]);
 
-    // const posts = [
-    //     {
-    //         id: 1,
-    //         title: "Test",
-    //         desc: "My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content<br/><br/>My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content My test content",
-    //         img: https://images.pexels.com/photos/18447656/pexels-photo-18447656.jpeg,
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "Test",
-    //         desc: "test",
-    //         img: "https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg",
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "Test",
-    //         desc: "test",
-    //         img: "https://images.pexels.com/photos/207900/pexels-photo-207900.jpeg",
-    //     },
-    // ]
-
     const getText = (html) =>{
         const doc = new DOMParser().parseFromString(html, "text/html")
         return doc.body.textContent
@@ -53,7 +32,7 @@ const Home = () => {
                 {posts.map((post) => (
                     <div className='post' key={post.id}>
                         <div className='img'>
-                            <img src={`../Blog/upload/${post.img}`} alt="post"></img>
+                            <img src={`../upload/${post.img}`} alt="post"></img>
                         </div>
                         <div className='content'>
                             <h1>{post.title}</h1>

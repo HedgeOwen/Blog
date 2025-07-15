@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Menu from "../components/Menu"
 import {Link, useLocation, useNavigate} from 'react-router-dom'
-import axios from "axios"
+import axios from "../axios"
 import { useState, useEffect} from "react"
 import moment from "moment"
 import { AuthContext } from '../context/authContext'
@@ -45,9 +45,9 @@ const Single = () => {
     return (
         <div className='single'>
             <div className='content'>
-                {post.img && <img src={`../Blog/upload/${post?.img}`} alt=""></img>}
+                {post.img && <img src={`../upload/${post?.img}`} alt=""></img>}
             <div className='user'>
-                {post.userImg && (<img src={`../Blog/upload/${post?.userImg}`} alt="  User"/>)}
+                {post.userImg && (<img src={`../upload/${post?.userImg}`} alt="  User"/>)}
             <div className='info'>
                 <span>{post?.username}</span>
                 <p>Posted {moment(post?.date).fromNow()}</p>
