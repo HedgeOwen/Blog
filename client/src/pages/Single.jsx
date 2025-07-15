@@ -18,7 +18,7 @@ const Single = () => {
     useEffect(()=>{
         const fetchData = async ()=>{
             try{
-                const res = await axios.get(`/api/posts/${postId}`)
+                const res = await axios.get(`http://47.100.103.106:8800/api/posts/${postId}`)
                 setPost(res.data)
             } catch(err){
                 console.log(err)
@@ -30,7 +30,7 @@ const Single = () => {
     const navigate = useNavigate();
     const handleDelete = async ()=>{
         try{
-            await axios.delete(`/api/posts/${postId}`)
+            await axios.delete(`http://47.100.103.106:8800/api/posts/${postId}`)
             navigate("/")
         } catch(err){
             console.log(err)

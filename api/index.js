@@ -4,6 +4,12 @@ import postRoutes from "./routes/posts.js"
 import userRoutes from "./routes/users.js"
 import cookieParser from "cookie-parser"
 import multer from "multer"
+import cors from "cors";
+
+app.use(cors({
+  origin: "http://47.100.103.106:3000",
+  credentials: true
+}));
 
 const app = express()
 
