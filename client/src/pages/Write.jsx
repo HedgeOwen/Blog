@@ -32,7 +32,7 @@ const Write = () => {
 
         try{
             state 
-            ? await axios.put(`/posts/${state.id}`, {
+            ? await axios.put(`/api/posts/${state.id}`, {
                 title, 
                 desc: desc, 
                 cat, 
